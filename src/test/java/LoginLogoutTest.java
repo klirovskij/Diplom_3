@@ -22,7 +22,7 @@ public class LoginLogoutTest {
         driver = new ChromeDriver();
         driver.get("https://stellarburgers.nomoreparties.site/");
         email = "test" + UUID.randomUUID().toString() + "@diplom.ru";
-        pass = "password123";
+        pass = "pass" + UUID.randomUUID().toString();
     }
 
     @Test
