@@ -10,15 +10,19 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import pages.LoginLogout;
 import pages.PersonalArea;
 
+import java.util.UUID;
+
 public class LoginLogoutTest {
-    private static final String email = "dimplomtest@diplom.ru";
-    private static final String pass = "1234567";
+    private String email = null;
+    private String pass = null;
     WebDriver driver;
 
     @Before
     public void setUp() {
         driver = new ChromeDriver();
         driver.get("https://stellarburgers.nomoreparties.site/");
+        email = "test" + UUID.randomUUID().toString() + "@diplom.ru";
+        pass = "password123";
     }
 
     @Test
@@ -107,6 +111,8 @@ public class LoginLogoutTest {
 
     @After
     public void tearDown() {
+        email = null;
+        pass = null;
         driver.quit();
     }
 }
